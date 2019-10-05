@@ -6,10 +6,14 @@ class ClientSocket():
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def socket_send_recv(self,FLAGS):
-
+        self.socket.connect((FLAGS.url, FLAGS.port))
+        request = "GET / HTTP/1.1\r\nHost:%s\r\n\r\n" % "localhost"
+        self.socket.send(request.encode())
+        data = self.socket.recv(4096)
+        print(data.decode())
 
     def main(self,FLAGS):
-
+        self.socket_send_recv(FLAGS)
 
 
 if __name__ == '__main__':
