@@ -6,6 +6,7 @@ def send_recv(client_socket, address):
     data = client_socket.recv(1024)
     print("[client {} {}]".format(os.getpid(),data.decode()))
 <<<<<<< HEAD
+<<<<<<< HEAD
     message = "HTTP/1.1 200 0K\r\n"
     html = """
         <!DOCTYPE html>
@@ -24,6 +25,9 @@ def send_recv(client_socket, address):
 =======
     client_socket.send(data)
 >>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
+=======
+    client_socket.send(data)
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
     client_socket.close()
 
 
@@ -37,6 +41,10 @@ def main(FLAGS):
         client, address = serversocket.accept()
         print("accept client from", address)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
 =======
         
 >>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
@@ -52,7 +60,11 @@ if __name__ == "__main__":
 
     FLAGS, _ = parser.parse_known_args()
 <<<<<<< HEAD
+<<<<<<< HEAD
     main(FLAGS)
+=======
+    main(FLAGS)
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
 =======
     main(FLAGS)
 >>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
