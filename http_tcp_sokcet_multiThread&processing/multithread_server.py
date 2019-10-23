@@ -5,6 +5,7 @@ import os
 def send_recv(client_socket, address):
     data = client_socket.recv(1024)
     print("[client {} {}]".format(os.getpid(),data.decode()))
+<<<<<<< HEAD
     message = "HTTP/1.1 200 0K\r\n"
     html = """
         <!DOCTYPE html>
@@ -20,6 +21,9 @@ def send_recv(client_socket, address):
         </html>
         """
     client_socket.send((message+html).encode('utf-8'))
+=======
+    client_socket.send(data)
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
     client_socket.close()
 
 
@@ -32,6 +36,10 @@ def main(FLAGS):
     while True:
         client, address = serversocket.accept()
         print("accept client from", address)
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
         th = Thread(target=send_recv, args=(client,address))
         th.start()
         th.join()
@@ -43,4 +51,8 @@ if __name__ == "__main__":
     parser.add_argument('-p','--port',type=int,default=1234,help="input port number")
 
     FLAGS, _ = parser.parse_known_args()
+<<<<<<< HEAD
     main(FLAGS)
+=======
+    main(FLAGS)
+>>>>>>> 5081a7e00a68f0124bc562b8a968eda173d4a136
