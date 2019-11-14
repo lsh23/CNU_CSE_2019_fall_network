@@ -9,19 +9,17 @@
 </head>
 <body>
     <h1>Hue Controll Page</h1>
-    <div>
-        <form action="">
+    <div class="controller">
+        <form action="" method="POST">
             <h3>Hue 1 Controller</h3>
-            <div>Power : On<input type="radio" name="powerOn"/> Off <input type="radio" name="powerOff"/></div>
+            <div>Power : On<input type="radio" name="powerOn" value="on"/> Off <input type="radio" name="powerOn" value="off"/></div>
             <div>Brightness:0 <input type="range" aria-valuemin="0" aria-valuemax="254" name="brightness"/>254</div>
             <div>
-                X:0<input type="number" name="x"/>1 <br/>
-                Y:0<input type="number" name="y"/>1
+                X:0<input type="number" name="x" min="0" max="1" step="0.01"/>1 <br/>
+                Y:0<input type="number" name="y" min="0" max="1" step="0.01"/>1
             </div>
-            <input type="submit">
+            <input type="submit" name="hue_1">
         </form>
     </div>
-
-
 </body>
 </html>
